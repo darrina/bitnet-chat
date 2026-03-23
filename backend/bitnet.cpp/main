@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Mock bitnet.cpp for testing/demo purposes
+# This simulates the bitnet.cpp inference engine
+
+# Parse arguments
+MODEL=""
+PROMPT=""
+MAX_TOKENS=512
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -m)
+      MODEL="$2"
+      shift 2
+      ;;
+    -p)
+      PROMPT="$2"
+      shift 2
+      ;;
+    -n)
+      MAX_TOKENS="$2"
+      shift 2
+      ;;
+    *)
+      shift
+      ;;
+  esac
+done
+
+# Simulate generation with a demo response
+echo "This is a demo response from the mock BitNet model."
+echo ""
+echo "The real bitnet.cpp would generate text based on the BitNet model."
+echo ""
+echo "To use a real model:"
+echo "1. Compile bitnet.cpp from the BitNet repository"
+echo "2. Download a compatible BitNet/GGUF model"
+echo "3. Update the BITNET_PATH and MODEL_PATH in backend/.env"
+echo ""
+echo "Your prompt was:"
+echo "$PROMPT"
